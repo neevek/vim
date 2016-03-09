@@ -257,7 +257,7 @@ if !exists(":DiffOrig")
 endif
 
 
-colo monokain
+colo neverland-darker
 "colo RailsCasts
 
 hi Search guibg=peru guifg=wheat
