@@ -69,7 +69,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
 nnoremap <leader>q :qa<cr>
 nnoremap <leader>x :tabnew<cr>
 nnoremap <leader>c :tabclose<cr>
@@ -82,6 +81,8 @@ noremap <c-m> <c-w>_
 noremap <F5> gt
 noremap <F6> gT
 nnoremap <leader>ee <c-w>=
+" goto function definition
+nnoremap <leader>g g<c-]>
 " replace
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " press SPACE to yank the word under cursor, 
