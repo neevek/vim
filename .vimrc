@@ -88,6 +88,9 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " press SPACE to yank the word under cursor, 
 " and move the cursor one character forward
 nnoremap <space> viwye<space><esc>
+" press SPACE twice to delete the word under cursor, and paste 
+" the text in register in the place originally taken by the deleted word
+nnoremap <space><space> viw"_d"+Pa<esc>
 " a shortcut to open ~/.vimrc in a vertical split-window
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
