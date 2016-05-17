@@ -13,6 +13,13 @@ in normal mode
 
 - `<leader>w` - save
 - `<leader>q` - quit
+- `<space>` - copy the word under cursor
+- `<space><space>` - replace the word under cursor with what is in the register, i.e. `select` -> `delete` -> `paste`
+- `<leader>d` - delete text in double quotes
+- `<leader>a` - replace the text in double quotes with what is in the register, i.e. `select text in double quotes` -> `delete it` -> `paste text in double quotes`
+- `<leader>dd` - delete text in single quotes
+- `<leader>aa` - replace the text in single quotes with what is in the register, i.e. `select text in single quotes` -> `delete it` -> `paste text in single quotes`
+- `tt` - close the current window/tab
 - `<leader>r` - replacing, edit all occurances of the word under cursor, hit `<enter>` to commit
 - `<leader>x` - create a new tab, and switch to the new tab
 - `<leader>c` - close the current tab

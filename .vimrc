@@ -91,6 +91,14 @@ nnoremap <space> viwye<space><esc>
 " press SPACE twice to delete the word under cursor, and paste 
 " the text in register in the place originally taken by the deleted word
 nnoremap <space><space> viw"_d"+Pa<esc>
+" delete text in in double quotes
+nnoremap <leader>d di"
+" delete text in in double quotes and paste what is in the register in quotes
+nnoremap <leader>a "_di"P
+" delete text in in single quotes
+nnoremap <leader>dd di'
+" delete text in in single quotes and paste what is in the register in quotes
+nnoremap <leader>aa "_di'P
 " a shortcut to open ~/.vimrc in a vertical split-window
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
