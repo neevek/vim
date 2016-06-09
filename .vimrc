@@ -63,6 +63,8 @@ set autoread
 " Allow windows to get fully squashed
 set winminheight=0     
 set winminwidth=0     
+setlocal shiftwidth=2
+setlocal tabstop=2
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
