@@ -26,6 +26,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'fatih/vim-go'
+Plugin 'python.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,8 +64,7 @@ set autoread
 " Allow windows to get fully squashed
 set winminheight=0     
 set winminwidth=0     
-setlocal shiftwidth=2
-setlocal tabstop=2
+au FileType python setl sw=2 sts=2 et
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -279,4 +279,6 @@ hi Search cterm=NONE ctermfg=black ctermbg=grey
 
 set colorcolumn=81
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+let python_highlight_all = 1
 
