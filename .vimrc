@@ -27,6 +27,7 @@ Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'fatih/vim-go'
 Plugin 'python.vim'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -183,7 +184,8 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 
-
+" https://github.com/pangloss/vim-javascript
+let g:javascript_enable_domhtmlcss = 1
 
 
 
