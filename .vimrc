@@ -103,7 +103,7 @@ nnoremap <leader>dd di'
 " delete text in in single quotes and paste what is in the register in quotes
 nnoremap <leader>aa "_di'P
 " a shortcut to open ~/.vimrc in a vertical split-window
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " map jk to exit insert mode
 inoremap jk <ESC>
@@ -280,7 +280,6 @@ hi Search guibg=peru guifg=wheat
 hi Search cterm=NONE ctermfg=black ctermbg=grey
 
 set colorcolumn=81
-highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 let python_highlight_all = 1
 
