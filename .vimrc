@@ -28,6 +28,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'fatih/vim-go'
 Plugin 'python.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jeaye/color_coded'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
