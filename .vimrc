@@ -182,7 +182,7 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " http://stackoverflow.com/a/18234204/668963
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
 
 
 " https://github.com/pangloss/vim-javascript
