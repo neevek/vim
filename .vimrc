@@ -110,6 +110,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 inoremap jk <ESC>
 " close current window
 nnoremap tt <Esc>:q<CR>
+nnoremap mm :!!<CR>
 
 nnoremap <F7> :PrevColorScheme<CR>
 nnoremap <F8> :NextColorScheme<CR>
