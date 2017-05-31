@@ -29,6 +29,7 @@ Plugin 'fatih/vim-go'
 Plugin 'python.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jeaye/color_coded'
+Plugin 'posva/vim-vue'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -156,7 +157,7 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
 nnoremap ,t :TlistToggle<CR>
 noremap <F9> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-" remember to run 'ctags -R -f ~/.vim/commontags /usr/include /usr/local/include'
+" remember to run 'ctags --c-kinds=+p -R -f ~/.vim/commontags /usr/include /usr/local/include'
 set tags+=~/.vim/commontags
 let Tlist_Exit_OnlyWindow=1
 
