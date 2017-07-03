@@ -33,7 +33,7 @@ Plugin 'posva/vim-vue'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'Align'
 Plugin 'mxw/vim-jsx'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
