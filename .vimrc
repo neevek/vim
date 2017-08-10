@@ -58,6 +58,7 @@ set nobackup
 set history=50		" keep 50 lines of command line history
 set incsearch		" do incremental searching
 
+set linespace=0
 set pastetoggle=<F2>
 set shiftwidth=2
 set ts=2
