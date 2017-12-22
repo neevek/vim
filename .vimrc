@@ -28,12 +28,10 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'fatih/vim-go'
 Plugin 'python.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'jeaye/color_coded'
+"Plugin 'jeaye/color_coded'
 Plugin 'posva/vim-vue'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'Align'
-Plugin 'mxw/vim-jsx'
-"Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,12 +51,10 @@ filetype plugin indent on    " required
 
 let mapleader = ","
 
-set lazyredraw
 set nobackup		
 set history=50		" keep 50 lines of command line history
 set incsearch		" do incremental searching
 
-set linespace=0
 set pastetoggle=<F2>
 set shiftwidth=2
 set ts=2
@@ -291,5 +287,7 @@ hi Search cterm=NONE ctermfg=black ctermbg=grey
 set colorcolumn=81
 
 let python_highlight_all = 1
-let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["java"] }
