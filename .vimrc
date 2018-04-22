@@ -52,7 +52,7 @@ filetype plugin indent on    " required
 let mapleader = ","
 
 set nobackup		
-set history=50		" keep 50 lines of command line history
+set history=10000
 set incsearch		" do incremental searching
 
 set pastetoggle=<F2>
@@ -210,7 +210,6 @@ let g:javascript_enable_domhtmlcss = 1
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 
