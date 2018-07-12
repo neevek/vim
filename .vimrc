@@ -294,4 +294,4 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_c_check_header = 1
 
 " https://stackoverflow.com/a/26662103/668963
-autocmd BufEnter *.c* :setlocal cindent cino=j1,(0,ws,Ws
+autocmd BufEnter *.c*,*.h,*.hpp :setlocal cindent cino=j1,(0,ws,Ws,l1
