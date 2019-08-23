@@ -296,3 +296,11 @@ let g:syntastic_c_check_header = 1
 
 " https://stackoverflow.com/a/26662103/668963
 autocmd BufEnter *.c*,*.h,*.hpp :setlocal cindent cino=j1,(0,ws,Ws,l1
+
+if has('nvim')
+  set splitright
+  "nnoremap <leader>z :below 20sp term://$SHELL<cr>i
+  nnoremap <leader>a :split term://$SHELL<cr>i
+  nnoremap <leader>z :vsplit term://$SHELL<cr>i
+  tnoremap jk <C-\><C-n>
+endif
