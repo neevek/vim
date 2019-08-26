@@ -300,7 +300,7 @@ autocmd BufEnter *.c*,*.h,*.hpp :setlocal cindent cino=j1,(0,ws,Ws,l1
 if has('nvim')
   set splitright
   "nnoremap <leader>z :below 20sp term://$SHELL<cr>i
-  nnoremap <leader>a :split term://$SHELL<cr>i
-  nnoremap <leader>z :vsplit term://$SHELL<cr>i
+  nnoremap <leader>a :split term://$SHELL<cr>i source ~/.bash_profile<CR><C-L>
+  nnoremap <leader>z :vsplit term://$SHELL<cr>i source ~/.bash_profile<CR><C-L>
   tnoremap jk <C-\><C-n>
 endif
