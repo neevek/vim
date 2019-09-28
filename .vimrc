@@ -115,6 +115,20 @@ inoremap jk <ESC>
 " close current window
 nnoremap tt <Esc>:q<CR>
 nnoremap mm :!!<CR>
+nnoremap <C-N> :.cc<cr>
+nnoremap <S-H> :silent grep! -siIR '\<<C-r><C-w>\>' --exclude '.git/**' . 2> /dev/null<cr>
+nnoremap <leader>s :silent grep! -siIR '\<.*.*\>' --exclude '.git/**' . 2>/dev/null<S-Left><S-Left><S-Left><S-Left><Left><Left><Left><Left><Left><Left>
+
+" https://stackoverflow.com/a/39010855/668963
+augroup myvimrc
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow 10
+  autocmd QuickFixCmdPost l*    lwindow 10
+augroup END
+" press ENTER to open file in QuickFix window
+autocmd FileType qf nnoremap <buffer> <Enter> <Enter>
+" resize quickfix window to 10 if it is smaller than 10
+autocmd BufEnter * if &ft == 'qf' && winheight(0) < 10 | resize 10 | endif
 
 nnoremap <F7> :PrevColorScheme<CR>
 nnoremap <F8> :NextColorScheme<CR>
@@ -141,6 +155,7 @@ let g:NERDTreeWinSize=40
 let g:NERDTreeAutoCenter=1
 let g:NERDTreeShowBookmarks=1
 noremap <F3> :NERDTreeToggle<CR> 
+let g:NERDTreeChDirMode = 2
 
 "function! NERDTree_Start()  
   "exec 'NERDTree'  
@@ -188,6 +203,10 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 " http://stackoverflow.com/a/18234204/668963
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 10
+
 
 
 " https://github.com/pangloss/vim-javascript
@@ -283,6 +302,7 @@ colo neverland-darker
 
 hi Search guibg=peru guifg=wheat
 hi Search cterm=NONE ctermfg=black ctermbg=grey
+hi QuickFixLine ctermfg=cyan ctermbg=blue
 
 set colorcolumn=81
 
@@ -300,7 +320,7 @@ autocmd BufEnter *.c*,*.h,*.hpp :setlocal cindent cino=j1,(0,ws,Ws,l1
 if has('nvim')
   set splitright
   "nnoremap <leader>z :below 20sp term://$SHELL<cr>i
-  nnoremap <leader>a :split term://$SHELL<cr>i source ~/.bash_profile<CR><C-L>
-  nnoremap <leader>z :vsplit term://$SHELL<cr>i source ~/.bash_profile<CR><C-L>
+  nnoremap <leader>a :split term://$SHELL<cr>i
+  nnoremap <leader>z :vsplit term://$SHELL<cr>i
   tnoremap jk <C-\><C-n>
 endif
