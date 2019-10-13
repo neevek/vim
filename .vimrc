@@ -25,7 +25,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'python.vim'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'jeaye/color_coded'
@@ -33,6 +33,8 @@ Plugin 'posva/vim-vue'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'Align'
 Plugin 'rust-lang/rust.vim'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -206,6 +208,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 10
+let g:syntastic_rust_checkers = ['rustc']
+let g:rustfmt_autosave = 1
 
 
 
