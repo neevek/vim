@@ -18,7 +18,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'plasticboy/vim-markdown'
 " Plugin 'vividchalk.vim'
 Plugin 'github-theme'
-Plugin 'syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'mileszs/ack.vim'
 Plugin 'flazz/vim-colorschemes'
@@ -33,6 +33,7 @@ Plugin 'posva/vim-vue'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'Align'
 Plugin 'rust-lang/rust.vim'
+Plugin 'majutsushi/tagbar'
 
 
 
@@ -175,7 +176,7 @@ let Tlist_WinWidth = 40
 let Tlist_Show_One_File=1  
 let Tlist_Exit_OnlyWindow=1  
 let Tlist_Use_Right_Window=1
-nnoremap ,t :TlistToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 noremap <F9> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " remember to run 'ctags -R -f ~/.vim/commontags /usr/include /usr/local/include'
 set tags+=~/.vim/commontags
@@ -205,10 +206,9 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 " http://stackoverflow.com/a/18234204/668963
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
-"let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 10
-let g:syntastic_rust_checkers = ['rustc']
 let g:rustfmt_autosave = 1
 
 
@@ -306,7 +306,7 @@ colo neverland-darker
 
 hi Search guibg=peru guifg=wheat
 hi Search cterm=NONE ctermfg=black ctermbg=grey
-hi QuickFixLine ctermfg=cyan ctermbg=blue
+hi QuickFixLine ctermfg=white ctermbg=darkred cterm=bold
 
 set colorcolumn=81
 
