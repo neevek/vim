@@ -34,6 +34,7 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'Align'
 Plugin 'rust-lang/rust.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'mbbill/undotree'
 
 
 
