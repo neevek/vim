@@ -208,8 +208,12 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_loc_list_height = 10
+let g:syntastic_reuse_loc_lists = 1
+let g:syntastic_error_symbol = "✖"
+let g:syntastic_warning_symbol = "﹗"
+
 let g:rustfmt_autosave = 1
 
 
