@@ -122,6 +122,8 @@ nnoremap mm :!!<CR>
 nnoremap <C-N> :.cc<cr>
 nnoremap <S-H> :silent grep! -siIR '\<<C-r><C-w>\>' --exclude '.git/**' . 2> /dev/null<cr>
 nnoremap <leader>s :silent grep! -siIR '\<.*.*\>' --exclude '.git/**' . 2>/dev/null<S-Left><S-Left><S-Left><S-Left><Left><Left><Left><Left><Left><Left>
+" show location list window for compile erros/warnings produced by syntastic
+nnoremap <leader>e :Error<cr>
 
 " https://stackoverflow.com/a/39010855/668963
 augroup myvimrc
@@ -207,10 +209,10 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 " http://stackoverflow.com/a/18234204/668963
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_loc_list_height = 10
-let g:syntastic_reuse_loc_lists = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_loc_list_height = 10
+"let g:syntastic_reuse_loc_lists = 1
 let g:syntastic_error_symbol = "✖"
 let g:syntastic_warning_symbol = "﹗"
 let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
