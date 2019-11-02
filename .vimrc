@@ -213,6 +213,7 @@ let g:syntastic_loc_list_height = 10
 let g:syntastic_reuse_loc_lists = 1
 let g:syntastic_error_symbol = "✖"
 let g:syntastic_warning_symbol = "﹗"
+let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
 let g:rustfmt_autosave = 1
 
