@@ -124,6 +124,7 @@ nnoremap <S-H> :silent grep! -siIR '\<<C-r><C-w>\>' --exclude '.git/**' . 2> /de
 nnoremap <leader>s :silent grep! -siIR '\<.*.*\>' --exclude '.git/**' . 2>/dev/null<S-Left><S-Left><S-Left><S-Left><Left><Left><Left><Left><Left><Left>
 " show location list window for compile erros/warnings produced by syntastic
 nnoremap <leader>e :Error<cr>
+nnoremap <leader>d :NERDTreeFind<cr>
 
 " https://stackoverflow.com/a/39010855/668963
 augroup myvimrc
