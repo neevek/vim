@@ -35,6 +35,9 @@ Plugin 'Align'
 Plugin 'rust-lang/rust.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'dense-analysis/ale'
 
 
 
@@ -139,6 +142,7 @@ autocmd BufEnter * if &ft == 'qf' && winheight(0) < 10 | resize 10 | endif
 
 nnoremap <F7> :PrevColorScheme<CR>
 nnoremap <F8> :NextColorScheme<CR>
+nnoremap <tab> :ALEDetail<CR>
 
 " use the system clipboard
 set clipboard=unnamed
