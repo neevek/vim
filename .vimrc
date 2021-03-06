@@ -38,6 +38,7 @@ Plugin 'mbbill/undotree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dense-analysis/ale'
+Plugin 'itchyny/vim-haskell-indent'
 
 
 
