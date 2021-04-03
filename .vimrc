@@ -187,7 +187,7 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
 nnoremap <leader>t :TagbarToggle<CR>
 noremap <F9> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-" remember to run 'ctags -R -f ~/.vim/commontags /usr/include /usr/local/include'
+" remember to run 'ctags -h=".h,." --language-force="c++" -R -f ~/.vim/commontags /usr/include /usr/local/include /Library/Developer/CommandLineTools/usr/include'
 set tags+=~/.vim/commontags
 let Tlist_Exit_OnlyWindow=1
 
