@@ -213,8 +213,8 @@ set undodir=~/.vim/undo_//
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " http://stackoverflow.com/a/18234204/668963
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++17'
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_always_populate_loc_list = 0
 "let g:syntastic_loc_list_height = 10
@@ -222,6 +222,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
 let g:syntastic_error_symbol = "✖"
 let g:syntastic_warning_symbol = "﹗"
 let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
+
+let g:ale_cpp_cc_options = '-std=c++17 -Wall'
 
 let g:rustfmt_autosave = 1
 
@@ -327,7 +329,7 @@ set colorcolumn=81
 let python_highlight_all = 1
 
 let g:syntastic_mode_map = {
-    \ "mode": "active",
+    \ "mode": "passive",
     \ "passive_filetypes": ["java"] }
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_c_check_header = 1
