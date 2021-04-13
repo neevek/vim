@@ -18,7 +18,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'plasticboy/vim-markdown'
 " Plugin 'vividchalk.vim'
 Plugin 'github-theme'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'mileszs/ack.vim'
 Plugin 'flazz/vim-colorschemes'
@@ -126,8 +125,6 @@ nnoremap mm :!!<CR>
 nnoremap <C-N> :.cc<cr>
 nnoremap <S-H> :silent grep! -siIR '\<<C-r><C-w>\>' --exclude '.git/**' . 2> /dev/null<cr>
 nnoremap <leader>s :silent grep! -siIR '\<.*.*\>' --exclude '.git/**' . 2>/dev/null<S-Left><S-Left><S-Left><S-Left><Left><Left><Left><Left><Left><Left>
-" show location list window for compile erros/warnings produced by syntastic
-nnoremap <leader>e :Error<cr>
 nnoremap <leader>d :NERDTreeFind<cr>
 
 " https://stackoverflow.com/a/39010855/668963
@@ -211,17 +208,6 @@ set undodir=~/.vim/undo_//
 
 " press <F3> to input the current timestamp at insert mode
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
-
-" http://stackoverflow.com/a/18234204/668963
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = '-std=c++17'
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_loc_list_height = 10
-"let g:syntastic_reuse_loc_lists = 1
-let g:syntastic_error_symbol = "✖"
-let g:syntastic_warning_symbol = "﹗"
-let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
 let g:ale_cpp_cc_options = '-std=c++17 -Wall'
 
@@ -327,12 +313,6 @@ hi QuickFixLine ctermfg=white ctermbg=darkred cterm=bold
 set colorcolumn=81
 
 let python_highlight_all = 1
-
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "passive_filetypes": ["java"] }
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_c_check_header = 1
 
 " https://stackoverflow.com/a/26662103/668963
 autocmd BufEnter *.c*,*.h,*.hpp :setlocal cindent cino=j1,(0,ws,Ws,l1
