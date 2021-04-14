@@ -1,7 +1,10 @@
 #!/bin/bash
 
-mkdir undo_ swap_ backup_
+mkdir -p undo_ swap_ backup_
 cp .vimrc ../.vimrc
-git submodule add https://github.com/VundleVim/Vundle.vim bundle/Vundle.vim
-git submodule update --init bundle/Vundle.vim
-vim +PluginInstall +qall
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim +PlugInstall +qall
+
+# install bat and ripgrep
+# brew install ripgrep
+# brew install bat

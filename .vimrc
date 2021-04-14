@@ -2,60 +2,40 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set t_Co=256
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" Plugins
-Plugin 'VundleVim/Vundle.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'yegappan/taglist'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'preservim/nerdcommenter'
+Plug 'Raimondi/delimitMate'
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'Lokaltog/vim-powerline'
+Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
+Plug 'rust-lang/rust.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
+Plug 'itchyny/vim-haskell-indent'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'sotte/presenting.vim'
+Plug 'junegunn/vim-easy-align'
 
-Plugin 'snipMate'
-Plugin 'taglist.vim'
-Plugin 'The-NERD-tree'
-Plugin 'The-NERD-Commenter'
-Plugin 'ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'plasticboy/vim-markdown'
-" Plugin 'vividchalk.vim'
-Plugin 'github-theme'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'mileszs/ack.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'fatih/vim-go'
-Plugin 'python.vim'
-Plugin 'pangloss/vim-javascript'
-"Plugin 'jeaye/color_coded'
-Plugin 'posva/vim-vue'
-Plugin 'DoxygenToolkit.vim'
-Plugin 'Align'
-Plugin 'rust-lang/rust.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'mbbill/undotree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'dense-analysis/ale'
-Plugin 'itchyny/vim-haskell-indent'
-
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-
+call plug#end()
 
 let mapleader = ","
 
@@ -96,8 +76,6 @@ noremap <c-m> <c-w>_
 noremap <F5> gt
 noremap <F6> gT
 nnoremap <leader>ee <c-w>=
-" goto function definition
-nnoremap <leader>g g<c-]>
 " replace
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " press SPACE to yank the word under cursor, 
@@ -115,7 +93,7 @@ nnoremap <leader>dd di'
 " delete text in in single quotes and paste what is in the register in quotes
 nnoremap <leader>aa "_di'P
 " a shortcut to open ~/.vimrc in a vertical split-window
-nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>ev :split ~/.vimrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " map jk to exit insert mode
 inoremap jk <ESC>
@@ -123,9 +101,10 @@ inoremap jk <ESC>
 nnoremap tt <Esc>:q<CR>
 nnoremap mm :!!<CR>
 nnoremap <C-N> :.cc<cr>
-nnoremap <S-H> :silent grep! -siIR '\<<C-r><C-w>\>' --exclude '.git/**' . 2> /dev/null<cr>
-nnoremap <leader>s :silent grep! -siIR '\<.*.*\>' --exclude '.git/**' . 2>/dev/null<S-Left><S-Left><S-Left><S-Left><Left><Left><Left><Left><Left><Left>
 nnoremap <leader>d :NERDTreeFind<cr>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>m :FZFMru<CR>
 
 " https://stackoverflow.com/a/39010855/668963
 augroup myvimrc
@@ -189,16 +168,9 @@ set tags+=~/.vim/commontags
 let Tlist_Exit_OnlyWindow=1
 
 
-" ctrlp
-" http://kien.github.com/ctrlp.vim/#installation
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-nnoremap ,f :CtrlP <CR>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|class|o)$'
-
-
 " snipMate 
-"let g:snippets_dir="~/.vim/bundle/snipMate/snippets/,~/.vim/.snippets/"
-let g:snippets_dir="~/.vim/.snippets/"
+set runtimepath^=~/.vim
+let g:snipMate = { 'snippet_version' : 1 }
 
 
 set timeoutlen=200
@@ -324,3 +296,16 @@ if has('nvim')
   nnoremap <leader>z :vsplit term://$SHELL<cr>i
   tnoremap jk <C-\><C-n>
 endif
+
+" settings for bfrg/vim-cpp-modern
+let g:cpp_attributes_highlight = 1
+let g:cpp_member_highlight = 1
+let g:cpp_simple_highlight = 1
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
+let $FZF_DEFAULT_OPTS="--preview-window 'right:60%' --bind ctrl-f:page-down,ctrl-b:page-up --preview 'bat --color=always --style=header,grid --line-range :500 {}'"
+let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules}/*"'
+let $BAT_THEME="Dracula"
+
+
+au FileType rst let b:presenting_slide_separator = '\v(^|\n)\~{4,}'
