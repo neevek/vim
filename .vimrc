@@ -303,7 +303,7 @@ let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 1
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
-let $FZF_DEFAULT_OPTS="--preview-window 'right:60%' --bind ctrl-f:page-down,ctrl-b:page-up --preview 'bat --color=always --style=header,grid --line-range :500 {}'"
+let $FZF_DEFAULT_OPTS="--preview-window 'right:50%' --bind ctrl-f:page-down,ctrl-b:page-up --preview 'bat --color=always --style=header,grid --line-range :500 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules}/*"'
 let $BAT_THEME="Dracula"
 
