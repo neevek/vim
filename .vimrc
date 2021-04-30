@@ -34,6 +34,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'sotte/presenting.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -105,6 +106,8 @@ nnoremap <leader>d :NERDTreeFind<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>m :FZFMru<CR>
+nnoremap <leader>gh :Glog! -- %<CR>
+nnoremap <leader>gb :Gblame<CR>
 
 " https://stackoverflow.com/a/39010855/668963
 augroup myvimrc
