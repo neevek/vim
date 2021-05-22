@@ -106,8 +106,8 @@ nnoremap <leader>d :NERDTreeFind<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>m :FZFMru<CR>
-nnoremap <leader>gh :Glog! -- %<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>h :Glog! -- %<CR>
+nnoremap <leader>b :Gblame<CR>
 
 " https://stackoverflow.com/a/39010855/668963
 augroup myvimrc
