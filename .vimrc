@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+"Plug 'garbas/vim-snipmate'
 Plug 'yegappan/taglist'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'preservim/nerdcommenter'
@@ -26,7 +26,6 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dense-analysis/ale'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -35,6 +34,12 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'sotte/presenting.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
+Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" :CocInstall coc-rust-analyzer   " should use rust-analyzer release-2021-09-27, inlay hints may not work with newer versions
+" :CocInstall coc-clangd
+" :CocInstall coc-snippets
+" :CocInstall coc-ultisnips
 
 call plug#end()
 
@@ -122,7 +127,6 @@ autocmd BufEnter * if &ft == 'qf' && winheight(0) < 10 | resize 10 | endif
 
 nnoremap <F7> :PrevColorScheme<CR>
 nnoremap <F8> :NextColorScheme<CR>
-nnoremap <tab> :ALEDetail<CR>
 
 " use the system clipboard
 set clipboard=unnamed
@@ -136,6 +140,29 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 " }}}
 
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+nnoremap <C-i> :call CocActionAsync('codeAction', '')<cr>
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'
 
 
 
@@ -171,11 +198,6 @@ set tags+=~/.vim/commontags
 let Tlist_Exit_OnlyWindow=1
 
 
-" snipMate 
-set runtimepath^=~/.vim
-let g:snipMate = { 'snippet_version' : 1 }
-
-
 set timeoutlen=200
 set backupdir=~/.vim/backup_//
 set directory=~/.vim/swap_//
@@ -183,8 +205,6 @@ set undodir=~/.vim/undo_//
 
 " press <F3> to input the current timestamp at insert mode
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
-
-let g:ale_cpp_cc_options = '-std=c++17 -Wall'
 
 let g:rustfmt_autosave = 1
 
