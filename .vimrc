@@ -298,8 +298,10 @@ if !exists(":DiffOrig")
 endif
 
 
-colo neverland-darker
+color flattr
 "colo RailsCasts
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 hi Search guibg=peru guifg=wheat
 hi Search cterm=NONE ctermfg=black ctermbg=grey
